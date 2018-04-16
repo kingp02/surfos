@@ -1,35 +1,9 @@
-<!DOCTYPE html>
-<html>
-<body style="margin:0px;padding:0px;">
-    <iframe id="myiframe"
-            frameborder="0"
-            style="position:absolute;width:100%;height:100%;"
-            nwfaketop
-            nwdisable
-            src=""></iframe>
-    <script>
-      var gui = require('nw.gui');
-      var win = gui.Window.get();
+<!doctypehtml>
 
-      var arg0 = gui.App.argv[0],
-          arg1 = gui.App.argv[1];
 
-      if(arg0 !== undefined && arg1 !== undefined) {
-        win.moveTo(arg0, arg1);
-      }
-
-      var url = gui.App.argv[2];
-
-      //win.on('loaded', function() {
-          var myiframe = document.getElementById('myiframe');
-
-          if(url !== undefined) {
-            document.write(url);
-            myiframe.src=url;
-          } else {
-            myiframe.src="https://github.com";
-          }
-      //});
-    </script>
+<head>
+<title>Internal Script</title>
+</head>
+<body>
+<iframe width="1325" height="750" src="https://swarmsim.github.io/" scrolling="yes"></iframe> 
 </body>
-</html>
