@@ -1,4 +1,4 @@
-# surfos
+# surfos beta
 
 download the file and open it in the chrome browser.
 
