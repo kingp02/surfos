@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Script</title>
-    </head>
-    <body>
+<!doctypehtml>
 
-       <iframe width="1325" height="750" src="https://swarmsim.github.io" scrolling="yes"></iframe> 
-        
-    </body>
-</html>
+ <!DOCTYPE html>
+ <html>
+     <head>
+         <title>Script</title>
+        <script>
+            (function(d){
+                var init = function(){
+                    var form = d.getElementById("my_form"), input = d.getElementById("url"), iframe = d.getElementById("browser");
+                    form.addEventListener("submit", function(e){
+                        var val = input.value;
+                        if(val) {
+                           iframe.src = val;
+                            console.log(val);
+                        }
+                        e.preventDefault();
+                   }, false);
+                };
+                d.addEventListener("DOMContentLoaded", init, false);
+            })(document);
+        </script>
+     </head>
+     <body>
+        <form method="post" target="browser" id="my_form">           
+         <input style="width:100;" placeholder="Put the website here" name="url" id="url" type="text" />
+           <input style="width:40;" name="submit" type="button" value="Go" />
+        </form>
+       <iframe name="browser" id="browser" src="http://google.com" style="height:750; width:1325"></iframe>
+      <iframe width="1325" height="750" src=""></iframe> 
+      
+     </body>
+ </html>
