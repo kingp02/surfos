@@ -1,35 +1,31 @@
 <!doctypehtml>
 
-
-<head>
-<title>Internal Script</title>
-  
-  <button onclick="return Show(#1);">1st</button>
-<button onclick="return Show(#2);">2nd</button>
-<button onclick="return Show(#3);">3rd</button>
-
-<div id="1">
-<iframe src="https://rotaryview.com/player?id=41327706" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<div id="2" style="display:none;">
-<iframe src="https://rotaryview.com/player?id=48608216" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<div id="3" style="display:none;">
-<iframe src="https://rotaryview.com/player?id=77540395" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<script>
-function Show(obj)
-{
-$('#1').css("display","none");
-$('#2').css("display","none");
-$('#3').css("display","none");
-$(obj).css("display","block");
-
-
-return false;
-}</script>
-</head>
-<body></body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IFRAME Script</title>
+        <script>
+            (function(d){
+                var init = function(){
+                    var form = d.getElementById("my_form"), input = d.getElementById("url"), iframe = d.getElementById("browser");
+                    form.addEventListener("submit", function(e){
+                        var val = input.value;
+                        if(val) {
+                            iframe.src = val;
+                            console.log(val);
+                        }
+                        e.preventDefault();
+                    }, false);
+                };
+                d.addEventListener("DOMContentLoaded", init, false);
+            })(document);
+        </script>
+    </head>
+    <body>
+        <form method="post" target="browser" id="my_form">
+            <input style="width:82%;" placeholder="Put the website here" name="url" id="url" type="text" />
+            <input style="width:8%;" name="submit" type="button" value="Go" />
+        </form>
+        <iframe name="browser" id="browser" src="http://google.com" style="height:100%; width:100%"></iframe>
+    </body>
+</html>
