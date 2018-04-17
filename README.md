@@ -1,5 +1,7 @@
 # surfos
 
-download the file and open it in the chrome browser.
+download the file and unzip it
 
-then type in the url and press enter.
+then open it in the chrome browser.
+
+type in the url and press enter.
